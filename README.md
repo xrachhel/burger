@@ -17,38 +17,59 @@ This is an application that allows users to input the names of the burgers they 
 
 
 ## Demo
-1. Navigate into noteTaker file in terminal
-2. run 'npm install' to install dependencies (express) needed for this application
-3. Run 'npm start' in terminal, a message saying 'APP listening on PORT 3000' will be displayed. This means the application is running on your server.
-4. Type in 'localhost:3000' in your browser
+1. Navigate into burger file in terminal
+2. run 'npm install' to install dependencies (express, express-handlebars, mysql) needed for this application
+3. Run 'npm start' and the message "Server listening on: http://localhost:8080 connected as id __" will appear. This means the application is running on your server.
+4. Type in 'localhost:8080' in your browser, and the site will appear
 
-![gif](public/assets/siteDemo.gif)
+![gif](/public/assets/img/siteDemo.gif)
 
 
 ## Code Snippet
 
 ```
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+var orm = {
+    selectAll: function (tableInput, cb) {
+        var queryString = "SELECT * FROM " + tableInput + ";";
+        connection.query(queryString, function(err, result){
+            if (err) {throw err};
+            
+            cb(result);
+        });
+    },
+    insertOne: function (table, cols, vals, cb) {
+        var queryString = "INSERT INTO " + table + " (" + cols.toString() + ") VALUES (" + printQuestionMarks(vals.length) + ") ";
+        console.log(queryString)
 
-app.post("/api/notes", function(req, res){
-    var newNote = req.body
-    fs.readFile('db/db.json', 'utf8', function(err,data){
-        if(err) throw err
-        var note = JSON.parse(data)
-        note.push(newNote)
-        note.forEach((item, i) => item.id = i + 1)
-           fs.writeFile('db/db.json', JSON.stringify(note), 'utf8', function(err){
-           if(err) throw err
-           console.log('Posted note!')
-       } )
+        connection.query(queryString, vals, function(err, result){
+            if (err) {throw err};
+            cb(result)
+        });
+    },
+    updateOne: function (table, objColVals, devoured, cb) {
+        var queryString = "UPDATE " + table + " SET " + objToSql(objColVals) + " WHERE " + devoured;
+        console.log(queryString)
 
-    })
-    res.json(newNote)
-})
+        connection.query(queryString, function(err, result){
+            if (err) {throw err};
+            cb(result)
+        });
+    },
+    delete: function(table, devoured, cb) {
+        var queryString = "DELETE FROM " + table + " WHERE " + devoured;
+    
+        connection.query(queryString, function(err, result) {
+          if (err) {
+            throw err;
+          }
+    
+          cb(result);
+        });
+      }
+};
 
 ```
-This portion of the script file displays the API route for posting a new note using express. 'app.post' is used to handle POST requests (a 'body parser' is needed to handle POST requests- lines 1-2). The variable 'newNote' is given the value of 'req.body', which is an object containing text from the parsed request body. 'db.json', which is a json file containing all the notes, is read and this data is parsed in order for it to become a Javascript object. 'newNote' is then pushed into the JSON data array, and each post is given an ID so a note with a specific ID can then be deleted later on. 
+This portion of the script file displays the ORM created, a library that allows us to make MySQL queries in Javascript instead of SQL. The first function, 'selectAll', allows us to make a query to select and display all of the information in the table. 'insertOne' allows us to insert a new row into the table when users create a new burger, 'updateOne' allows the user to move the burger from the 'eat later' column to the 'devoured' column and vise versa by making a query to update the table in MySQL. The last function, 'delete' deletes the burger row from the table by making the MySQL query 'DELETE FROM'.
 
 ## Authors
 
