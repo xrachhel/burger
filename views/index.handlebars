@@ -1,3 +1,46 @@
-{{!-- CREATE BUTTON THAT WILL SUBMIT USER INPUT INTO DATABASE --}}
+<h1 style="font-family:'Londrina Shadow', cursive; font-size:5em; text-align: center " class="text-light">Burgers
+    Burgers Burgers</h1>
 
-<h1>hello</h1>
+<div class="flex-container" style="display: flex; flex-direction:row; justify-content: space-around">
+
+    <div class="jumbotron">
+        <h2 style="margin-top:-50px;">Burgers I want to eat:</h2>
+        <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            {{> burgers/burger-block devoured=true}}
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+    <div id="add">
+        <h2>Add a burger!</h2>
+        <form class="create-form">
+
+            <div class="form-group">
+                <label for="burg">Burger Name:</label>
+                <input type="text" id="burg" name="name" style="border-radius:25px;">
+            </div>
+
+            <div class="form-group" style="text-align: center">
+                <label for="devoured">Devoured?</label><br>
+                <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+                <input type="radio" name="devoured" value="0"> Eat later <br><br>
+                <button type="submit" class="btn-lg"
+                    style="border-radius:25px;background:yellow;color:red;font-size: 2em;border:2px solid red; font-family:'Londrina Shadow"><span><i
+                            class="fas fa-hamburger"></i></span> Add Burger</button>
+            </div>
+
+
+        </form>
+    </div>
+    <div class="jumbotron">
+        <h2 style="margin-top:-50px;">Burgers I have devoured:</h2>
+        <ul>
+            {{#each burgers}}
+            {{#if devoured}}
+            {{> burgers/burger-block devoured=false}}
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
