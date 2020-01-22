@@ -19,11 +19,11 @@ $(function(){
         );
     });
 
-    $(".create-form").on("submit", function(event) {
+    $("#create-burger").on("click", function(event) {
         event.preventDefault();
-    
+        alert('hello')
         var newBurger = {
-          burger_name: $("#burg").val().trim(),
+          burger_name: $("#bur").val().trim(),
           devoured: $("[name=devoured]:checked").val().trim()
         };
     

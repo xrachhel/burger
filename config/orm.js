@@ -47,7 +47,7 @@ var orm = {
         });
     },
     updateOne: function (table, objColVals, devoured, cb) {
-        var queryString = "UPDATE " + table + " SET " + objToSql(objColVals) + " WHERE " + devoured
+        var queryString = "UPDATE " + table + " SET " + objToSql(objColVals) + " WHERE " + devoured;
         console.log(queryString)
 
         connection.query(queryString, function(err, result){
@@ -56,7 +56,7 @@ var orm = {
         });
     },
     delete: function(table, devoured, cb) {
-        var queryString = "DELETE FROM " + table + "WHERE " + devoured
+        var queryString = "DELETE FROM " + table + " WHERE " + devoured;
     
         connection.query(queryString, function(err, result) {
           if (err) {
