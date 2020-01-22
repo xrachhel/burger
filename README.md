@@ -8,8 +8,9 @@ This is an application that allows users to input the names of the burgers they 
 
 * [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): used for structuring and creating elements on the DOM
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS): used to style html elements on the page
-* [Javscript](https://developer.mozilla.org/en-US/docs/Web/JavaScript): high level programming language
-* [Node.js](https://developer.mozilla.org/en-US/docs/Web/API/Node): Javascript runtime, allows users to run Javascript on the server
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript): high level programming language
+* [jQuery](https://jquery.com/t): Javascript library to simplify HTML DOM traversal
+* [Node.js](https://developer.mozilla.org/en-US/docs/Web/API/Node): JavaScript runtime, allows users to run JavaScript on the server
 * [Express](https://expressjs.com/): Web framwork for Node.js
 * [MySQL](https://www.mysql.com/): Open-source relational database management system
 * [Express-Handlebars](https://www.npmjs.com/package/express-handlebars): Templating engine for web applications
