@@ -5,19 +5,18 @@
 
     <div class="jumbotron">
         <h2 style="margin-top:-50px;">Burgers I want to eat:</h2>
-            <ul>
+        <ul>
             {{#each burgers}}
             {{#unless devoured}}
             {{> burgers/burger-block devour=true}}
             {{/unless}}
             {{/each}}
         </ul>
-        
+
     </div>
     <div id="add">
         <h2>Add a burger!</h2>
         <form class="create-form">
-
             <div class="form-group">
                 <label for="burg">Burger Name:</label>
                 <input type="text" id="bur" name="name" style="border-radius:25px;">
@@ -27,22 +26,20 @@
                 <label for="devoured">Devoured?</label><br>
                 <input type="radio" name="devoured" value="1" checked> Devoured!<br>
                 <input type="radio" name="devoured" value="0"> Eat later <br><br>
-                <button type="submit" id = "create-burger" class="btn-lg"
+                <button type="submit" id="create-burger" class="btn-lg"
                     style="border-radius:25px;background:yellow;color:red;font-size: 2em;border:2px solid red; font-family:'Londrina Shadow"><span><i
                             class="fas fa-hamburger"></i></span> Add Burger</button>
             </div>
-
-
         </form>
     </div>
     <div class="jumbotron">
         <h2 style="margin-top:-50px;">Burgers I have devoured:</h2>
-         <ul>
+        <ul>
             {{#each burgers}}
             {{#if devoured}}
             {{> burgers/burger-block devour=false}}
             {{/if}}
             {{/each}}
         </ul>
-   
+
     </div>
