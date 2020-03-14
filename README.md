@@ -3,7 +3,6 @@
 ## Description
 This is an application that allows users to input the names of the burgers they would like to eat. Whenever an user submits a burger's name, they can decide whether they want to eat it or if they have already eaten it. Depending on what they pick, the burger would go to a different column on the page. Users can then decide to eat the burger, eat it again, or delete the burger from the list. The Burger Logger is created with MySQL, Node, Express, Express-Handlebars, and a homemade ORM.
 
-
 ## Technologies Used
 
 * [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): used for structuring and creating elements on the DOM
@@ -15,8 +14,6 @@ This is an application that allows users to input the names of the burgers they 
 * [MySQL](https://www.mysql.com/): Open-source relational database management system
 * [Express-Handlebars](https://www.npmjs.com/package/express-handlebars): Templating engine for web applications
 
-
-
 ## Demo
 1. Navigate into burger file in terminal
 2. run 'npm install' to install dependencies (express, express-handlebars, mysql) needed for this application
@@ -24,7 +21,6 @@ This is an application that allows users to input the names of the burgers they 
 4. Type in 'localhost:8080' in your browser, and the site will appear
 
 ![gif](/public/assets/img/siteDemo.gif)
-
 
 ## Code Snippet
 
@@ -75,7 +71,7 @@ This portion of the script file displays the ORM created, a library that allows 
 ## Authors
 
 **Rachel Yeung**
-* [Portfolio](https://xrachhel.github.io/updatedPortfolio/)
+* [Portfolio](https://rachelyeung.herokuapp.com/)
 * [Github](https://github.com/xrachhel)
 * [LinkedIn](https://www.linkedin.com/in/rachel-yeung-814986159/)
 
