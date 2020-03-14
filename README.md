@@ -15,6 +15,10 @@ This is an application that allows users to input the names of the burgers they 
 * [Express-Handlebars](https://www.npmjs.com/package/express-handlebars): Templating engine for web applications
 
 ## Demo
+* [Visit Live Site](https://burger-logger-ry.herokuapp.com/)
+
+OR
+
 1. Navigate into burger file in terminal
 2. run 'npm install' to install dependencies (express, express-handlebars, mysql) needed for this application
 3. Run 'npm start' and the message "Server listening on: http://localhost:8080 connected as id __" will appear. This means the application is running on your server.
