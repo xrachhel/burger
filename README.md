@@ -1,6 +1,5 @@
 # Burger Logger
 
-## Description
 This is an application that allows users to input the names of the burgers they would like to eat. Whenever an user submits a burger's name, they can decide whether they want to eat it or if they have already eaten it. Depending on what they pick, the burger would go to a different column on the page. Users can then decide to eat the burger, eat it again, or delete the burger from the list. The Burger Logger is created with MySQL, Node, Express, Express-Handlebars, and a homemade ORM.
 
 ## Technologies Used
